@@ -1,0 +1,235 @@
+*** Starting uWSGI 2.0.15 (64bit) on [Fri Dec 15 11:02:30 2017] ***
+compiled with version: 5.4.0 20160609 on 05 December 2017 00:47:33
+os: Linux-4.10.0-42-generic #46~16.04.1-Ubuntu SMP Mon Dec 4 15:57:59 UTC 2017
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/atguigu/书城项目/不再头铁版/12.14/bookstore
+writing pidfile to uwsgi.pid
+detected binary path: /home/atguigu/.virtualenvs/py3/bin/uwsgi
+chdir() to /home/atguigu/书城项目/不再头铁版/12.14/bookstore
+your processes number limit is 7744
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:8000).
+bind(): Address already in use [core/socket.c line 769]
+*** Starting uWSGI 2.0.15 (64bit) on [Fri Dec 15 11:43:46 2017] ***
+compiled with version: 5.4.0 20160609 on 05 December 2017 00:47:33
+os: Linux-4.10.0-42-generic #46~16.04.1-Ubuntu SMP Mon Dec 4 15:57:59 UTC 2017
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/atguigu/书城项目/不再头铁版/12.14/bookstore
+writing pidfile to uwsgi.pid
+detected binary path: /home/atguigu/.virtualenvs/py3/bin/uwsgi
+chdir() to /home/atguigu/书城项目/不再头铁版/12.14/bookstore
+your processes number limit is 7744
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8000 fd 3
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/.virtualenvs/py3/
+Fatal Python error: Py_Initialize: Unable to get the locale encoding
+ImportError: No module named 'encodings'
+
+Current thread 0x00007f579bcb1740 (most recent call first):
+*** Starting uWSGI 2.0.15 (64bit) on [Fri Dec 15 11:44:53 2017] ***
+compiled with version: 5.4.0 20160609 on 05 December 2017 00:47:33
+os: Linux-4.10.0-42-generic #46~16.04.1-Ubuntu SMP Mon Dec 4 15:57:59 UTC 2017
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/atguigu/书城项目/不再头铁版/12.14/bookstore
+writing pidfile to uwsgi.pid
+detected binary path: /home/atguigu/.virtualenvs/py3/bin/uwsgi
+chdir() to /home/atguigu/书城项目/不再头铁版/12.14/bookstore
+your processes number limit is 7744
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:8000 fd 3
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/atguigu/.virtualenvs/py3/
+Python main interpreter initialized at 0xcca380
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+unable to load app 0 (mountpoint='') (callable not found or import error)
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xcca380 pid: 6701 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 6701)
+spawned uWSGI worker 1 (pid: 6703, cores: 2)
+spawned uWSGI worker 2 (pid: 6704, cores: 2)
+spawned uWSGI worker 3 (pid: 6706, cores: 2)
+spawned uWSGI worker 4 (pid: 6707, cores: 2)
+[pid: 6707|app: 0|req: 1/1] 127.0.0.1 () {44 vars in 819 bytes} [Fri Dec 15 03:45:56 2017] GET / => generated 2550 bytes in 338 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 6706|app: 0|req: 1/2] 127.0.0.1 () {42 vars in 810 bytes} [Fri Dec 15 03:46:12 2017] GET /books/index => generated 13007 bytes in 534 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 6703|app: 0|req: 1/3] 127.0.0.1 () {44 vars in 869 bytes} [Fri Dec 15 03:59:29 2017] GET /books/detail/17/ => generated 10999 bytes in 414 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.15 (64bit) on [Fri Dec 15 12:06:14 2017] ***
+compiled with version: 5.4.0 20160609 on 05 December 2017 00:47:33
+os: Linux-4.10.0-42-generic #46~16.04.1-Ubuntu SMP Mon Dec 4 15:57:59 UTC 2017
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/atguigu/书城项目/不再头铁版/12.14/bookstore
+writing pidfile to uwsgi.pid
+detected binary path: /home/atguigu/.virtualenvs/py3/bin/uwsgi
+chdir() to /home/atguigu/书城项目/不再头铁版/12.14/bookstore
+your processes number limit is 7744
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:8000).
+bind(): Address already in use [core/socket.c line 769]
+[pid: 6704|app: 0|req: 1/4] 127.0.0.1 () {44 vars in 841 bytes} [Fri Dec 15 04:06:39 2017] GET /books/index => generated 13007 bytes in 543 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 6704|app: 0|req: 2/5] 127.0.0.1 () {44 vars in 855 bytes} [Fri Dec 15 04:41:03 2017] GET /cart/show => generated 14697 bytes in 344 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 6706|app: 0|req: 2/6] 127.0.0.1 () {44 vars in 779 bytes} [Fri Dec 15 04:41:05 2017] GET /cart/count/ => generated 10 bytes in 322 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Fri Dec 15 14:03:32 2017] ***
+compiled with version: 5.4.0 20160609 on 05 December 2017 00:47:33
+os: Linux-4.10.0-42-generic #46~16.04.1-Ubuntu SMP Mon Dec 4 15:57:59 UTC 2017
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/atguigu/书城项目/不再头铁版/12.14/bookstore
+writing pidfile to uwsgi.pid
+detected binary path: /home/atguigu/.virtualenvs/py3/bin/uwsgi
+chdir() to /home/atguigu/书城项目/不再头铁版/12.14/bookstore
+your processes number limit is 7744
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:9001 fd 3
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/atguigu/.virtualenvs/py3/
+Python main interpreter initialized at 0x20e4380
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+unable to load app 0 (mountpoint='') (callable not found or import error)
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x20e4380 pid: 8896 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 8896)
+spawned uWSGI worker 1 (pid: 8899, cores: 2)
+spawned uWSGI worker 2 (pid: 8900, cores: 2)
+spawned uWSGI worker 3 (pid: 8902, cores: 2)
+spawned uWSGI worker 4 (pid: 8904, cores: 2)
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+*** Starting uWSGI 2.0.15 (64bit) on [Fri Dec 15 14:05:01 2017] ***
+compiled with version: 5.4.0 20160609 on 05 December 2017 00:47:33
+os: Linux-4.10.0-42-generic #46~16.04.1-Ubuntu SMP Mon Dec 4 15:57:59 UTC 2017
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/atguigu/书城项目/不再头铁版/12.14/bookstore
+writing pidfile to uwsgi.pid
+detected binary path: /home/atguigu/.virtualenvs/py3/bin/uwsgi
+chdir() to /home/atguigu/书城项目/不再头铁版/12.14/bookstore
+your processes number limit is 7744
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:9001).
+bind(): Address already in use [core/socket.c line 769]
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+*** Starting uWSGI 2.0.15 (64bit) on [Fri Dec 15 14:08:18 2017] ***
+compiled with version: 5.4.0 20160609 on 05 December 2017 00:47:33
+os: Linux-4.10.0-42-generic #46~16.04.1-Ubuntu SMP Mon Dec 4 15:57:59 UTC 2017
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/atguigu/书城项目/不再头铁版/12.14/bookstore
+writing pidfile to uwsgi.pid
+detected binary path: /home/atguigu/.virtualenvs/py3/bin/uwsgi
+chdir() to /home/atguigu/书城项目/不再头铁版/12.14/bookstore
+your processes number limit is 7744
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:8000).
+bind(): Address already in use [core/socket.c line 769]
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+[pid: 6707|app: 0|req: 2/7] 127.0.0.1 () {40 vars in 692 bytes} [Fri Dec 15 06:09:08 2017] GET /books/index/ => generated 12840 bytes in 1396 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.15 (64bit) on [Fri Dec 15 14:10:04 2017] ***
+compiled with version: 5.4.0 20160609 on 05 December 2017 00:47:33
+os: Linux-4.10.0-42-generic #46~16.04.1-Ubuntu SMP Mon Dec 4 15:57:59 UTC 2017
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/atguigu/书城项目/不再头铁版/12.14/bookstore
+writing pidfile to uwsgi.pid
+detected binary path: /home/atguigu/.virtualenvs/py3/bin/uwsgi
+chdir() to /home/atguigu/书城项目/不再头铁版/12.14/bookstore
+your processes number limit is 7744
+your memory page size is 4096 bytes
+detected max file descriptor number: 65536
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (127.0.0.1:9001).
+bind(): Address already in use [core/socket.c line 769]
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+invalid request block size: 21573 (max 4096)...skip
+[pid: 8904|app: 0|req: 1/1] 127.0.0.1 () {40 vars in 692 bytes} [Fri Dec 15 06:10:30 2017] GET /books/index/ => generated 12840 bytes in 540 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 8900|app: 0|req: 1/2] 127.0.0.1 () {42 vars in 723 bytes} [Fri Dec 15 07:27:43 2017] GET /books/index/ => generated 12840 bytes in 2510 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 8902|app: 0|req: 1/3] 127.0.0.1 () {42 vars in 723 bytes} [Fri Dec 15 07:38:58 2017] GET /books/index/ => generated 12840 bytes in 1535 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 8902|app: 0|req: 2/4] 127.0.0.1 () {42 vars in 736 bytes} [Fri Dec 15 07:39:11 2017] GET /cart/show => generated 0 bytes in 147 msecs (HTTP/1.1 302) 4 headers in 150 bytes (1 switches on core 0)
+[pid: 8899|app: 0|req: 1/5] 127.0.0.1 () {42 vars in 740 bytes} [Fri Dec 15 07:39:12 2017] GET /user/login/ => generated 3647 bytes in 1697 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 8899|app: 0|req: 2/6] 127.0.0.1 () {42 vars in 725 bytes} [Fri Dec 15 07:39:16 2017] GET /user/verifycode/ => generated 1589 bytes in 2300 msecs (HTTP/1.1 200) 4 headers in 218 bytes (1 switches on core 0)
