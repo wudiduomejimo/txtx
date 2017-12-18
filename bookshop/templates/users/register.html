@@ -79,25 +79,29 @@
     $('#btn').click(function () {
         var username = $('#user_name').val();
         var password = $('#pwd').val();
-        var email = $('#cpwd').val();
+        var email = $('#email').val();
         var data = {
             username:username,
             password:password,
             email:email
         };
-        console.log(data);
     //ajax传到后端
         $.post('/users/register/',data,function (res) {
             if(res.res==1){
+                alert('数据不能为空');
                 $('.error_tip2').next().html('数据不能为空')
+
             }
             else if(res.res==2){
+                 alert('邮箱格式不对');
                 $('.error_tip2').next().html('邮箱格式不对')
             }
              else if(res.res==3){
+                alert('账号已被注册');
                 $('.error_tip2').next().html('账号已被注册')
             }
              else if(res.res==0){
+                 alert('注册成功');
                 $('.error_tip2').next().html('注册成功')
                 location.href = '/users/login'
             }

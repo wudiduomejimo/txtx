@@ -1,10 +1,13 @@
 from django.http import JsonResponse
 from django.shortcuts import render
 from users.models import Passport
+from django.core.urlresolvers import reverse
+import re
 from django.views.decorators.csrf import csrf_exempt
 import re
 
 # Create your views here.
+#注册
 @csrf_exempt
 def register(request):
 	if request.method == 'GET':
@@ -13,8 +16,8 @@ def register(request):
 		username = request.POST.get('username')
 		password = request.POST.get('password')
 		email = request.POST.get('email')
-		print(username,password,email)
-		if not all [username,password,email]:
+
+		if not all([username,password,email]):
 			#数据为空 1
 			return JsonResponse({'res': 1})
 		if not re.match(r'^[a-z0-9][\w\.\-]*@[a-z0-9\-]+(\.[a-z]{2,5}){1,2}$', email):
@@ -27,9 +30,34 @@ def register(request):
 				return JsonResponse({'res': 3})
 			else:
 				#写入数据库
-				passport = Passport.objects.add_one_passport(username=username,password=password,email=email)
+				try:
+					passport = Passport.objects.add_one_passport(username=username,password=password,email=email)
+				except Exception as e:
+					print(e)
 				return JsonResponse({'res': 0})
 
-
+#登陆
+@csrf_exempt
 def login(request):
-	return render(request,'users/login.html')
+	if request.method == 'GET':
+		return render(request,'users/login.html')
+	elif request.method == 'POST':
+		username = request.POST.get('username')
+		password = request.POST.get('password')
+		remember = request.POST.get('remember')
+		# print(username,password,remember)
+		if not all([username,password]):
+			#数据不能为空
+			return JsonResponse({'res':0})
+		else:
+			passport = Passport.objects.get_one_passport(username=username,password=password)
+			if passport:
+				#登陆成功　写入session　记录用户登陆状态
+				request.session['islogin'] = True
+				request.session['username'] = username
+				request.session['passport_id'] = passport.id
+				print(passport.username)
+				return JsonResponse({'res':2})
+			else:
+				#账户或密码不正确s
+				return JsonResponse({'res':1})
