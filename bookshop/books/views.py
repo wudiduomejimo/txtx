@@ -1,5 +1,6 @@
 from audioop import reverse
 
+from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 from books.models import Books
 from books.enumspy import *
@@ -52,3 +53,53 @@ def detail(request,books_id):
 	context = {'books':books,'books_li':books_li}
 	#使用模板
 	return render(request,'books/detail.html',context)
+
+#列表页
+def list(request,type_id,page):
+	'''商品列表页面'''
+	#获取排序方式
+	sort = request.GET.get('sort','default')
+	#判断type_id是否合法
+	if int(type_id) not in BOOKS_TYPE.keys():
+		return redirect(reverse('books:index'))
+	#根据商品种类id和排序方式查询数据库
+	books_li = Books.objects.get_books_by_type(type_id=type_id,sort=sort)
+	#分页
+	paginator = Paginator(books_li,1)
+	#获取分页之后的总页数
+	num_pages = paginator.num_pages
+	if page =='' or int(page) > num_pages:
+		page = 1
+	else:
+		page = int(page)
+	# 返回值是一个Page类的实例对象
+	books_li = paginator.page(page)
+	#返回值是一个paginator.page(page)
+	#进行页码控制
+	#小于５页全显示
+	if num_pages < 5:
+		pages = range(1,num_pages+1)
+	elif num_pages < 3:
+		pages = range(1,6)
+	#后三页时显示５页
+	elif num_pages-page <=2:
+		pages = range(num_pages-4,num_pages+1)
+	else:
+		pages = range(num_pages-2,page+3)
+	#新品推荐
+	books_new = Books.objects.get_books_by_type(type_id=type_id,sort='new')
+	# 定义上下文
+	type_title = BOOKS_TYPE[int(type_id)]
+	context = {
+		'books_li': books_li,
+		'books_new': books_new,
+		'type_id': type_id,
+		'sort': sort,
+		'type_title': type_title,
+		'pages': pages
+	}
+	print('sort',sort)
+	return render(request,'books/list.html',context)
+
+
+
