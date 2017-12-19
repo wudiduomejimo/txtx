@@ -1,10 +1,10 @@
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from users.models import Passport
 from django.core.urlresolvers import reverse
 import re
 from django.views.decorators.csrf import csrf_exempt
-import re
+
 
 # Create your views here.
 #注册
@@ -51,13 +51,28 @@ def login(request):
 			return JsonResponse({'res':0})
 		else:
 			passport = Passport.objects.get_one_passport(username=username,password=password)
+
 			if passport:
+
 				#登陆成功　写入session　记录用户登陆状态
 				request.session['islogin'] = True
 				request.session['username'] = username
 				request.session['passport_id'] = passport.id
-				print(passport.username)
-				return JsonResponse({'res':2})
+
+				jres = JsonResponse({'res':2})
+				# 记住用户名
+				if remember:
+					jres.set_cookie('username',username,max_age=7*24*3600)
+				else:
+					jres.delete_cookie('uername')
+				return jres
 			else:
-				#账户或密码不正确s
+				#账户或密码不正确
 				return JsonResponse({'res':1})
+
+#退出
+def logout(request):
+	#清空用户信息
+	request.session.flush()
+	# 跳转到首页
+	return redirect(reverse('books:index'))

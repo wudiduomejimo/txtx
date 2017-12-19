@@ -108,3 +108,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
+#在编辑商品信息时，需要上传书籍的图片，在配置文件中设置图片存放目录。
+MEDIA_ROOT = os.path.join(BASE_DIR,'static')
